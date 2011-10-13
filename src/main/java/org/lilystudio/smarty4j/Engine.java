@@ -304,8 +304,7 @@ public class Engine {
      * @throws IOException       如果模板解析过程中有语法错误
      * @throws TemplateException 如果模板有语法错误
      */
-    public Template getTemplate(String name) throws IOException,
-            TemplateException {
+    public Template getTemplate(String name) throws IOException, TemplateException {
         name = path + name;
         Template template = templates.get(name);
         if (template != null && !(debug && template.isUpdated())) {
@@ -316,6 +315,24 @@ public class Engine {
         File file = new File(name);
         template = new Template(this, file);
         templates.put(name, template);
+        return template;
+    }
+
+    /**
+     * 根据smarty的文本生成模板
+     *
+     * @param smartyCode smarty code
+     * @return 模板对象
+     * @throws IOException       如果模板解析过程中有语法错误
+     * @throws TemplateException 如果模板有语法错误
+     */
+    public Template parseTemplate(String smartyCode) throws IOException, TemplateException {
+        Template template = templates.get(smartyCode);
+        if (template != null && !(debug && template.isUpdated())) {
+            return template;
+        }
+        template = new Template(this, smartyCode);
+        templates.put(smartyCode, template);
         return template;
     }
 
