@@ -7,13 +7,31 @@
     <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Smarty for Java</name>
-    <url>http://maven.apache.org</url>
+    <name>Smarty Engine for Java</name>
+    <description>
+        Smarty Engine for Java, please visit http://code.google.com/p/ordinary/ for detail.
+    </description>
+    <url>https://github.com/linux-china/smarty4j</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <developers>
+        <developer>
+            <id>linux_china</id>
+            <name>Jacky Chan</name>
+            <email>libing.chen@gmail.com</email>
+            <url>http://weibo.com/linux2china</url>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git://github.com/linux-china/smarty4j.git</connection>
+        <developerConnection>scm:git@github.com:linux-china/smarty4j.git</developerConnection>
+        <url>https://github.com/linux-china/smarty4j</url>
+    </scm>
     <dependencies>
         <dependency>
             <groupId>asm</groupId>
