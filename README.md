@@ -36,9 +36,9 @@ Smarty4J is an template engine implemented by Java to deal with Smarty template.
              * @throws Exception exception
              */
             public void testRender() throws Exception {
-                Template template = smartyEngine.getTemplate("/src/test/resources/demo.tpl"); //打开模板文件
+                Template template = smartyEngine.getTemplate("/src/test/resources/demo.tpl");
                 Context context = new Context();
-                context.set("title", "雷卷");
+                context.set("title", "欢迎光临！");
                 ByteArrayOutputStream out = new ByteArrayOutputStream();
                 template.merge(context, out);
                 System.out.println(out.toString("utf-8"));
