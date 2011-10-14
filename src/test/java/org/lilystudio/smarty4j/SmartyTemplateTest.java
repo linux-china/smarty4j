@@ -3,6 +3,8 @@ package org.lilystudio.smarty4j;
 import junit.framework.TestCase;
 
 import java.io.ByteArrayOutputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * smarty template test
@@ -13,7 +15,18 @@ public class SmartyTemplateTest extends TestCase {
     /**
      * smarty engine
      */
-    private Engine smartyEngine = new Engine();
+    private Engine smartyEngine;
+
+    /**
+     * Sets up the fixture, for example, open a network connection.
+     * This method is called before a test is executed.
+     */
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+        Map<String, String> config = new HashMap<String, String>();
+        this.smartyEngine = new Engine(config);
+    }
 
     /**
      * test to render smarty template
