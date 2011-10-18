@@ -89,7 +89,7 @@ public class Engine {
     /**
      * 模板对象集合
      */
-    private Cache<String, Template> templates = new Cache<String, Template>(1000, -1);
+    private Cache<String, Template> templates = new Cache<String, Template>(1024, -1);
 
 
     /**
