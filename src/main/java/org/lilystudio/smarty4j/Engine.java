@@ -328,7 +328,7 @@ public class Engine {
      */
     public Template parseTemplate(String smartyCode) throws IOException, TemplateException {
         Template template = templates.get(smartyCode);
-        if (template != null && !(debug && template.isUpdated())) {
+        if (template != null) {
             return template;
         }
         template = new Template(this, smartyCode);
