@@ -89,7 +89,8 @@ public class Engine {
     /**
      * 模板对象集合
      */
-    private Map<String, Template> templates = new HashMap<String, Template>(256);
+    private Cache<String, Template> templates = new Cache<String, Template>(1000, -1);
+
 
     /**
      * 建立模板引擎，加载默认的配置文件：smarty.properties
